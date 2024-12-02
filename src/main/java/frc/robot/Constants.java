@@ -29,5 +29,22 @@ public final class Constants {
     public static final class Pneumatics {
     }
 
+    public static final class Drive {
+        public static final edu.wpi.first.wpilibj.SPI.Port navXID =
+            edu.wpi.first.wpilibj.SPI.Port.kMXP;
+        public static final boolean isFeildRelative = true;
+    }
 
+    public static final class Ball {
+        public static final int BEAMBREAK1 = 0;
+        public static final int BEAMBREAK2 = 1;
+        public static final int BALLMOTOR = 12;
+    }
+
+    public static final class Hatch {
+        public static final int HATCHMOTOR = 10;
+        public static final int TOUCHSENSOR = 3;
+        public static final int CANCODER = 15;
+
+    }
 }
