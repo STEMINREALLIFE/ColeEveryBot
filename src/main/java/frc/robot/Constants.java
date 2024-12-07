@@ -1,5 +1,7 @@
 package frc.robot;
 
+import edu.wpi.first.math.geometry.Rotation2d;
+
 /**
  * Constants file.
  */
@@ -29,22 +31,64 @@ public final class Constants {
     public static final class Pneumatics {
     }
 
-    public static final class Drive {
+    public static final class Drive { // Notes by Cole - "These are constant vairables that the
+                                      // drive train uses"
         public static final edu.wpi.first.wpilibj.SPI.Port navXID =
             edu.wpi.first.wpilibj.SPI.Port.kMXP;
         public static final boolean isFeildRelative = true;
+        public static final int FRONTRIGHT = 4; // Notes by Cole - "These 4 variables are the divice
+                                                // ids fore the motors for the drive train."
+        public static final int FRONTLEFT = 2;
+        public static final int BACKRIGHT = 5;
+        public static final int BACKLEFT = 3;
+
+        /** pid value */
+        public static final double DRIVE_KP = 0.0;
+        public static final double DRIVE_KI = 0.0;
+        public static final double DRIVE_KD = 0.0;
     }
 
-    public static final class Ball {
-        public static final int BEAMBREAK1 = 0;
+    public static final class Intake {
+        public static final int BEAMBREAK1 = 0; // Notes by Cole - ports for the beam breaks
         public static final int BEAMBREAK2 = 1;
-        public static final int BALLMOTOR = 12;
+        public static final int INTAKEMOTOR = 12; // Notes by Cole - port for the intake motor
     }
 
     public static final class Hatch {
+        /**
+         * hardware ports
+         */
         public static final int HATCHMOTOR = 10;
         public static final int TOUCHSENSOR = 3;
         public static final int CANCODER = 15;
 
+        /**
+         * PID values
+         */
+        public static final double HATCH_LARGE_KP = 1.0;
+        public static final double HATCH_KP = 1.0;
+        public static final double HATCH_KI = 1.0;
+        public static final double HATCH_KD = 1.0;
+        public static final double MAX_VELOCITY = 1.0;
+        public static final double MAX_ACCELERATION = 1.0;
+
+        public static final Rotation2d HATCH_REF_1_ANGLE_MEASURED = Rotation2d.fromRotations(0.0);
+        public static final Rotation2d HATCH_REF_2_ANGLE_MEASURED = Rotation2d.fromRotations(0.0);
+        public static final Rotation2d HATCH_REF_1_ANGLE_ACTUAL = Rotation2d.fromDegrees(0.0);
+        public static final Rotation2d HATCH_REF_2_ANGLE_ACTUAL = Rotation2d.fromDegrees(0.0);
+
+        public static final double HATCH_M;
+        public static final double HATCH_B;
+        public static final Rotation2d HATCH_HOME = Rotation2d.fromDegrees(10);
+        public static final Rotation2d INTAKE_POSITON = Rotation2d.fromDegrees(100);
+
+        static {
+            HATCH_M =
+                (HATCH_REF_2_ANGLE_ACTUAL.getRotations() - HATCH_REF_1_ANGLE_ACTUAL.getRotations())
+                    / (HATCH_REF_2_ANGLE_MEASURED.getRotations()
+                        - HATCH_REF_1_ANGLE_MEASURED.getRotations());
+            HATCH_B = HATCH_REF_1_ANGLE_ACTUAL.getRotations()
+                - HATCH_REF_1_ANGLE_MEASURED.getRotations() * HATCH_M;
+        }
     }
 }

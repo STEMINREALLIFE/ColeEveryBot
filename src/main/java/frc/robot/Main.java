@@ -4,6 +4,11 @@
 
 package frc.robot;
 
+
+// Notes by Cole - main stuff
+
+
+
 import edu.wpi.first.wpilibj.RobotBase;
 
 /**
