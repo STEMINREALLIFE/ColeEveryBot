@@ -26,11 +26,14 @@ public class Intake extends SubsystemBase {
     }
 
     public boolean getIntake() {
-        return inputs.intake; // Notes by Cole - returns the value of intake
+        return inputs.intake; // Notes by Cole - returns the value of intake, if running, = true,
+                              // else = false
     }
 
     public boolean getOuttake() {
-        return inputs.outtake; // Notes by Cole - returns the value of outtake
+        return inputs.outtake; // Notes by Cole - returns the value of outtake if running, = true,
+                               // else = false
+
     }
 
 

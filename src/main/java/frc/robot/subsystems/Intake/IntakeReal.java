@@ -1,17 +1,17 @@
 package frc.robot.subsystems.Intake;
 
-import com.revrobotics.CANSparkLowLevel.MotorType;
-import com.revrobotics.CANSparkMax;
+import com.revrobotics.spark.SparkLowLevel.MotorType;
+import com.revrobotics.spark.SparkMax;
 import edu.wpi.first.wpilibj.DigitalInput;
 import frc.robot.Constants;
 
 public class IntakeReal implements IntakeIO {
 
-    private final CANSparkMax intakeMotor =
-        new CANSparkMax(Constants.Intake.INTAKEMOTOR, MotorType.kBrushless); // Notes by Cole -
-                                                                             // intake motor is
-                                                                             // defined, id is form
-                                                                             // constants
+    private final SparkMax intakeMotor =
+        new SparkMax(Constants.Intake.INTAKEMOTOR, MotorType.kBrushless); // Notes by Cole -
+                                                                          // intake motor is
+                                                                          // defined, id is form
+                                                                          // constants
     private final DigitalInput intakeBeamBreak = new DigitalInput(Constants.Intake.BEAMBREAK1); // Notes
                                                                                                 // by
                                                                                                 // Cole

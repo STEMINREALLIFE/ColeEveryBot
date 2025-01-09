@@ -8,7 +8,9 @@ import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
 public class Drive extends SubsystemBase {
     private DriveIO io; // Notes by Cole - creates a variabel named "io"
-    private DriveIOInputsAutoLogged inputs = new DriveIOInputsAutoLogged(); // Notes by Cole - new
+    private DriveIOInputsAutoLogged inputs = new DriveIOInputsAutoLogged();
+
+    private DriveIOInputsAutoLogged  // Notes by Cole - new
                                                                             // DriveIOInputsAutoLogged
                                                                             // object called
                                                                             // "inputs"

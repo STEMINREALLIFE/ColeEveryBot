@@ -2,18 +2,25 @@ package frc.robot.subsystems.Hatch;
 
 import com.ctre.phoenix6.hardware.CANcoder;
 import com.revrobotics.AbsoluteEncoder;
-import com.revrobotics.CANSparkBase.IdleMode;
-import com.revrobotics.CANSparkLowLevel.MotorType;
-import com.revrobotics.CANSparkMax;
+import com.revrobotics.spark.SparkLowLevel.MotorType;
+import com.revrobotics.spark.SparkMax;
+import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 import edu.wpi.first.wpilibj.DigitalInput;
 import frc.robot.Constants;
 
 public class HatchReal implements HatchIO {
     /** initilize motors and sensors */
-    private CANSparkMax hatchMotor =
-        new CANSparkMax(Constants.Hatch.HATCHMOTOR, MotorType.kBrushless); // Notes by Cole - motor
-                                                                           // is defined, id got
-                                                                           // from constants
+    private SparkMax hatchMotor = new SparkMax(Constants.Hatch.HATCHMOTOR, MotorType.kBrushless); // Notes
+                                                                                                  // by
+                                                                                                  // Cole
+                                                                                                  // -
+                                                                                                  // motor
+                                                                                                  // is
+                                                                                                  // defined,
+                                                                                                  // id
+                                                                                                  // got
+                                                                                                  // from
+                                                                                                  // constants
     private DigitalInput touchSensor = new DigitalInput(Constants.Hatch.TOUCHSENSOR); // Notes by
                                                                                       // Cole -
                                                                                       // touch

@@ -33,8 +33,8 @@ public final class Constants {
 
     public static final class Drive { // Notes by Cole - "These are constant vairables that the
                                       // drive train uses"
-        public static final edu.wpi.first.wpilibj.SPI.Port navXID =
-            edu.wpi.first.wpilibj.SPI.Port.kMXP;
+        public static final com.studica.frc.AHRS.NavXComType navXID =
+            com.studica.frc.AHRS.NavXComType.kMXP_SPI;
         public static final boolean isFeildRelative = true;
         public static final int FRONTRIGHT = 4; // Notes by Cole - "These 4 variables are the divice
                                                 // ids fore the motors for the drive train."

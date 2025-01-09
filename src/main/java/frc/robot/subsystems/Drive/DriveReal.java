@@ -5,7 +5,10 @@ import com.ctre.phoenix6.StatusSignal;
 import com.ctre.phoenix6.controls.StrictFollower;
 import com.ctre.phoenix6.hardware.TalonFX;
 import com.ctre.phoenix6.signals.NeutralModeValue;
-import com.kauailabs.navx.frc.AHRS;
+import com.studica.frc.AHRS;
+import edu.wpi.first.units.measure.Angle;
+import edu.wpi.first.units.measure.AngularVelocity;
+import edu.wpi.first.units.measure.Voltage;
 import frc.robot.Constants;
 
 public class DriveReal implements DriveIO {
@@ -32,15 +35,15 @@ public class DriveReal implements DriveIO {
     private final TalonFX driveBackLeftFollow = new TalonFX(Constants.Drive.BACKLEFT, "CANivore");
 
     private final AHRS gyro = new AHRS(Constants.Drive.navXID);
-    private final StatusSignal<Double> driveRightLeadPositon; // Notes by Cole - diffrent types of
-                                                              // variabels that store data about the
-                                                              // motors are defined here, such as
-                                                              // position, velocity and voltage.
-    private final StatusSignal<Double> driveRightLeadVelocity;
-    private final StatusSignal<Double> driveRightLeadVoltage;
-    private final StatusSignal<Double> driveLeftLeadPositon;
-    private final StatusSignal<Double> driveLeftLeadVelocity;
-    private final StatusSignal<Double> driveLeftLeadVoltage;
+    private final StatusSignal<Angle> driveRightLeadPositon; // Notes by Cole - diffrent types of
+                                                             // variabels that store data about the
+                                                             // motors are defined here, such as
+                                                             // position, velocity and voltage.
+    private final StatusSignal<AngularVelocity> driveRightLeadVelocity;
+    private final StatusSignal<Voltage> driveRightLeadVoltage;
+    private final StatusSignal<Angle> driveLeftLeadPositon;
+    private final StatusSignal<AngularVelocity> driveLeftLeadVelocity;
+    private final StatusSignal<Voltage> driveLeftLeadVoltage;
 
     public DriveReal() {
 
